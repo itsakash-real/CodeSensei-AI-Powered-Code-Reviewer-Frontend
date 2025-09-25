@@ -18,22 +18,6 @@
 
 ---
 
-## 📋 Table of Contents  
-- [About the Project](#-about-the-project)  
-- [Built With](#-built-with)  
-- [Features](#-features)  
-- [Demo](#-demo)  
-- [Installation](#-installation)  
-- [Usage](#-usage)  
-- [Project Structure](#-project-structure)  
-- [Technical Highlights](#-technical-highlights)  
-- [Browser Compatibility](#-browser-compatibility)  
-- [Contributing](#-contributing)  
-- [License](#-license)  
-- [Contact](#-contact)  
-
----
-
 ## 🎯 About the Project  
 **CodeSensei** is a professional landing page for an AI-powered code review platform. It helps developers automatically detect **bugs, performance issues, and security vulnerabilities**, while showcasing modern web development practices with clean and maintainable code.  
 
