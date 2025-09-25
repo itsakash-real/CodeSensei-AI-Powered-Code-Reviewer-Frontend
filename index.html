@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CodeSensei – AI-Powered Code Reviewer</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        theme: { extend: {} }
+      }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+  </head>
+  <body class="min-h-dvh bg-[var(--color-background)] text-[var(--color-foreground)]">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-[var(--color-border)]/80 bg-[var(--color-background)]/70 backdrop-blur-xl supports-[backdrop-filter]:bg-[var(--color-background)]/70">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#top" class="group inline-flex items-center gap-3">
+          <div class="relative">
+            <div class="inline-grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary)]/80 text-[var(--color-primary-foreground)] shadow-lg transition-transform group-hover:scale-110 group-hover:rotate-3 font-bold">CS</div>
+            <div class="absolute -right-1 -top-1 h-3 w-3 rounded-full bg-[var(--color-chart-2)] animate-pulse"></div>
+          </div>
+          <span class="text-xl font-bold tracking-tight">CodeSensei</span>
+        </a>
+        
+        <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
+          <a href="#features" class="relative text-sm font-medium text-[var(--color-muted-foreground)] transition-colors hover:text-[var(--color-foreground)] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-[var(--color-primary)] after:transition-all hover:after:w-full">Features</a>
+          <a href="#showcase" class="relative text-sm font-medium text-[var(--color-muted-foreground)] transition-colors hover:text-[var(--color-foreground)] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-[var(--color-primary)] after:transition-all hover:after:w-full">Showcase</a>
+          <a href="#about" class="relative text-sm font-medium text-[var(--color-muted-foreground)] transition-colors hover:text-[var(--color-foreground)] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-[var(--color-primary)] after:transition-all hover:after:w-full">About</a>
+          <a href="#faq" class="relative text-sm font-medium text-[var(--color-muted-foreground)] transition-colors hover:text-[var(--color-foreground)] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-[var(--color-primary)] after:transition-all hover:after:w-full">FAQ</a>
+          <div class="h-6 w-px bg-[var(--color-border)]"></div>
+          <a href="/app" class="group inline-flex h-10 items-center justify-center rounded-lg bg-[var(--color-primary)] px-6 text-sm font-semibold text-[var(--color-primary-foreground)] shadow-md transition-all hover:scale-105 hover:shadow-lg">
+            <span>Try Now</span>
+            <i data-lucide="sparkles" class="ml-2 h-4 w-4 transition-transform group-hover:rotate-12"></i>
+          </a>
+        </nav>
+        
+        <button aria-label="Open menu" id="menuBtn" class="inline-flex items-center justify-center rounded-md p-2 text-[var(--color-foreground)] hover:bg-[var(--color-muted)] md:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      
+      <div id="mobileNav" class="hidden border-t border-[var(--color-border)] bg-[var(--color-background)] md:hidden">
+        <nav class="mx-auto grid max-w-7xl gap-1 px-4 py-3 sm:px-6" aria-label="Mobile">
+          <a href="#top" class="rounded-md px-3 py-2 text-[var(--color-foreground)] hover:bg-[var(--color-muted)]">Home</a>
+          <a href="#features" class="rounded-md px-3 py-2 text-[var(--color-foreground)] hover:bg-[var(--color-muted)]">Features</a>
+          <a href="#showcase" class="rounded-md px-3 py-2 text-[var(--color-foreground)] hover:bg-[var(--color-muted)]">Showcase</a>
+          <a href="#about" class="rounded-md px-3 py-2 text-[var(--color-foreground)] hover:bg-[var(--color-muted)]">About</a>
+          <a href="#faq" class="rounded-md px-3 py-2 text-[var(--color-foreground)] hover:bg-[var(--color-muted)]">FAQ</a>
+          <a href="#contact" class="rounded-md px-3 py-2 text-[var(--color-foreground)] hover:bg-[var(--color-muted)]">Contact</a>
+          <a href="/app" class="mt-1 inline-flex h-9 items-center justify-center rounded-md bg-[var(--color-primary)] px-4 text-sm font-medium text-[var(--color-primary-foreground)] shadow transition-transform hover:scale-[1.02]">Try Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="relative">
+      <!-- HERO -->
+      <section id="top" class="relative overflow-hidden border-b border-[var(--color-border)]" aria-labelledby="hero-heading">
+        <div aria-hidden class="pointer-events-none absolute inset-0 -z-10">
+          <div class="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+          <div class="absolute left-1/2 top-[-10%] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full blur-3xl [background:conic-gradient(from_90deg_at_50%_50%,var(--color-primary)/20,var(--color-chart-3)/15,var(--color-primary)/20)]"></div>
+          <div class="absolute right-[-5%] bottom-[-5%] h-[24rem] w-[24rem] rounded-full blur-3xl [background:radial-gradient(60%_60%_at_50%_50%,var(--color-chart-2)/18,transparent_70%)]"></div>
+        </div>
+        
+        <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+          <div class="mx-auto max-w-4xl space-y-8 text-center">
+            <div class="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)]/60 bg-[var(--color-card)]/80 backdrop-blur-sm px-4 py-2 text-sm text-[var(--color-muted-foreground)]">
+              <div class="flex items-center gap-2">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-chart-2)] opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-chart-2)]"></span>
+                </span>
+                <span class="font-medium">AI-Powered Code Reviewer</span>
+              </div>
+            </div>
+            
+            <h1 id="hero-heading" class="text-balance text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+              <span class="bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted-foreground)] bg-clip-text text-transparent">Review Code</span>
+              <br />
+              <span class="text-[var(--color-primary)]">Smarter &amp; Faster</span>
+            </h1>
+            
+            <p class="mx-auto max-w-2xl text-lg leading-relaxed text-[var(--color-muted-foreground)] sm:text-xl">
+              Automatically detect bugs, security flaws, and performance issues with AI-powered insights. Get actionable suggestions that improve code quality instantly.
+            </p>
+            
+            <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <a href="/app" class="group inline-flex h-12 items-center justify-center rounded-lg bg-[var(--color-primary)] px-8 text-base font-semibold text-[var(--color-primary-foreground)] shadow-lg transition-all hover:scale-105 hover:shadow-xl">
+                <span>Start Free Review</span>
+                <i data-lucide="arrow-right" class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"></i>
+              </a>
+              <a href="#showcase" class="group inline-flex h-12 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--color-card)]/80 backdrop-blur-sm px-8 text-base font-medium text-[var(--color-foreground)] transition-all hover:bg-[var(--color-muted)]">
+                <i data-lucide="code" class="mr-2 h-4 w-4"></i>
+                <span>See Live Examples</span>
+              </a>
+            </div>
+            
+            <!-- Live Statistics -->
+            <div class="flex flex-col items-center gap-4 pt-8">
+              <p class="text-sm text-[var(--color-muted-foreground)]">Trusted by developers worldwide</p>
+              <div class="grid grid-cols-3 gap-8 text-center">
+                <div class="animate-counter">
+                  <div class="text-2xl font-bold text-[var(--color-primary)]" id="bugs-found">10,000+</div>
+                  <div class="text-xs text-[var(--color-muted-foreground)]">Bugs Found</div>
+                </div>
+                <div class="animate-counter" style="animation-delay: 0.2s;">
+                  <div class="text-2xl font-bold text-[var(--color-primary)]" id="reviews-done">50,000+</div>
+                  <div class="text-xs text-[var(--color-muted-foreground)]">Reviews Done</div>
+                </div>
+                <div class="animate-counter" style="animation-delay: 0.4s;">
+                  <div class="text-2xl font-bold text-[var(--color-primary)]" id="time-saved">2M+ hrs</div>
+                  <div class="text-xs text-[var(--color-muted-foreground)]">Time Saved</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Code Showcase -->
+      <section id="showcase" class="py-20 bg-[var(--color-secondary)]/30 border-b border-[var(--color-border)]">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              <span class="bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted-foreground)] bg-clip-text text-transparent">See CodeSensei</span>
+              <span class="block text-[var(--color-primary)]">in Action</span>
+            </h2>
+            <p class="text-lg text-[var(--color-muted-foreground)]">Watch AI analyze and improve code in real-time</p>
+          </div>
+          
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Before/After Code Preview -->
+            <div class="space-y-6">
+              <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] overflow-hidden shadow-xl">
+                <div class="flex items-center justify-between px-4 py-3 bg-[var(--color-muted)]/50 border-b border-[var(--color-border)]">
+                  <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </div>
+                  <div class="text-sm font-medium text-[var(--color-muted-foreground)]">main.js</div>
+                </div>
+                <div class="p-6 space-y-4">
+                  <div class="text-sm font-semibold text-[var(--color-destructive)] mb-2">❌ Before - Issues Detected</div>
+                  <div class="bg-[var(--color-muted)]/30 rounded-lg p-4 code-line text-[var(--color-muted-foreground)]">
+                    <div class="text-red-400">// Potential null pointer exception</div>
+                    <div>function processUser(user) {</div>
+                    <div class="pl-4 text-red-300">return user.name.toLowerCase();</div>
+                    <div>}</div>
+                  </div>
+                  
+                  <div class="text-sm font-semibold text-[var(--color-chart-2)] mb-2">✅ After - AI Suggestions Applied</div>
+                  <div class="bg-[var(--color-chart-2)]/10 rounded-lg p-4 code-line">
+                    <div class="text-green-400">// Safe null check added</div>
+                    <div>function processUser(user) {</div>
+                    <div class="pl-4 text-green-300">return user?.name?.toLowerCase() || 'unknown';</div>
+                    <div>}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- AI Analysis Panel -->
+            <div class="space-y-6">
+              <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-6 shadow-xl">
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary)]/80 flex items-center justify-center">
+                    <i data-lucide="brain" class="h-4 w-4 text-[var(--color-primary-foreground)]"></i>
+                  </div>
+                  <h3 class="font-semibold">AI Analysis Results</h3>
+                  <div class="ml-auto">
+                    <span class="inline-flex items-center gap-1 text-xs bg-[var(--color-chart-2)]/10 text-[var(--color-chart-2)] px-2 py-1 rounded-full">
+                      <span class="w-2 h-2 bg-[var(--color-chart-2)] rounded-full animate-pulse"></span>
+                      Live
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="space-y-4">
+                  <div class="flex items-start gap-3 p-3 bg-[var(--color-destructive)]/5 rounded-lg border-l-4 border-[var(--color-destructive)]">
+                    <i data-lucide="alert-triangle" class="h-4 w-4 text-[var(--color-destructive)] mt-0.5"></i>
+                    <div>
+                      <div class="text-sm font-medium">Security Issue</div>
+                      <div class="text-xs text-[var(--color-muted-foreground)]">Potential null pointer exception on line 2</div>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start gap-3 p-3 bg-[var(--color-chart-4)]/5 rounded-lg border-l-4 border-[var(--color-chart-4)]">
+                    <i data-lucide="zap" class="h-4 w-4 text-[var(--color-chart-4)] mt-0.5"></i>
+                    <div>
+                      <div class="text-sm font-medium">Performance</div>
+                      <div class="text-xs text-[var(--color-muted-foreground)]">Consider using optional chaining for safer access</div>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start gap-3 p-3 bg-[var(--color-chart-2)]/5 rounded-lg border-l-4 border-[var(--color-chart-2)]">
+                    <i data-lucide="check-circle" class="h-4 w-4 text-[var(--color-chart-2)] mt-0.5"></i>
+                    <div>
+                      <div class="text-sm font-medium">Suggestion Applied</div>
+                      <div class="text-xs text-[var(--color-muted-foreground)]">Added null safety with default fallback</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="mt-6 pt-4 border-t border-[var(--color-border)]">
+                  <div class="flex justify-between items-center text-sm">
+                    <span class="text-[var(--color-muted-foreground)]">Code Quality Score</span>
+                    <span class="font-bold text-[var(--color-chart-2)]">92/100</span>
+                  </div>
+                  <div class="mt-2 h-2 bg-[var(--color-muted)] rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-[var(--color-chart-2)] to-[var(--color-chart-2)]/80 rounded-full animate-code-typing" style="width: 92%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features" aria-labelledby="features-heading" class="border-b border-[var(--color-border)] bg-gradient-to-b from-[var(--color-background)] to-[var(--color-secondary)]/20">
+        <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <h2 id="features-heading" class="text-4xl font-bold tracking-tight sm:text-5xl">
+              <span class="bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted-foreground)] bg-clip-text text-transparent">Powerful features</span>
+              <span class="block text-[var(--color-primary)]">for modern teams</span>
+            </h2>
+            <p class="mt-4 text-lg text-[var(--color-muted-foreground)]">Accelerate reviews, improve code quality, and ship with confidence</p>
+          </div>
+          
+          <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Feature Card 1 -->
+            <div class="group relative overflow-hidden rounded-2xl border border-[var(--color-border)]/60 bg-[var(--color-card)]/80 backdrop-blur-sm p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[var(--color-primary)]/10">
+              <div class="relative z-10">
+                <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary)]/80 text-[var(--color-primary-foreground)]">
+                  <i data-lucide="brain" class="h-6 w-6"></i>
+                </div>
+                <h3 class="text-xl font-bold">AI-Powered Analysis</h3>
+                <p class="mt-2 text-[var(--color-muted-foreground)]">Advanced machine learning detects bugs, anti-patterns, and suggests improvements across your entire codebase</p>
+                <div class="mt-4 flex items-center text-sm text-[var(--color-primary)] font-medium">
+                  Learn more 
+                  <i data-lucide="arrow-right" class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"></i>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="group relative overflow-hidden rounded-2xl border border-[var(--color-border)]/60 bg-[var(--color-card)]/80 backdrop-blur-sm p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[var(--color-primary)]/10">
+              <div class="relative z-10">
+                <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--color-chart-2)] to-[var(--color-chart-2)]/80 text-white">
+                  <i data-lucide="git-pull-request" class="h-6 w-6"></i>
+                </div>
+                <h3 class="text-xl font-bold">GitHub Integration</h3>
+                <p class="mt-2 text-[var(--color-muted-foreground)]">Seamlessly integrates with your workflow. Auto-review PRs with inline comments and status checks</p>
+                <div class="mt-4 flex items-center text-sm text-[var(--color-chart-2)] font-medium">
+                  Learn more 
+                  <i data-lucide="arrow-right" class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"></i>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-chart-2)]/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="group relative overflow-hidden rounded-2xl border border-[var(--color-border)]/60 bg-[var(--color-card)]/80 backdrop-blur-sm p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[var(--color-primary)]/10">
+              <div class="relative z-10">
+                <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--color-chart-4)] to-[var(--color-chart-4)]/80 text-white">
+                  <i data-lucide="shield-check" class="h-6 w-6"></i>
+                </div>
+                <h3 class="text-xl font-bold">Security Analysis</h3>
+                <p class="mt-2 text-[var(--color-muted-foreground)]">Identify security vulnerabilities and performance bottlenecks before they reach production</p>
+                <div class="mt-4 flex items-center text-sm text-[var(--color-chart-4)] font-medium">
+                  Learn more 
+                  <i data-lucide="arrow-right" class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"></i>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-chart-4)]/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+            </div>
+
+            <!-- Feature Card 4 -->
+            <div class="group relative overflow-hidden rounded-2xl border border-[var(--color-border)]/60 bg-[var(--color-card)]/80 backdrop-blur-sm p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[var(--color-primary)]/10">
+              <div class="relative z-10">
+                <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--color-chart-3)] to-[var(--color-chart-3)]/80 text-white">
+                  <i data-lucide="gauge" class="h-6 w-6"></i>
+                </div>
+                <h3 class="text-xl font-bold">Quality Scoring</h3>
+                <p class="mt-2 text-[var(--color-muted-foreground)]">Get clear quality scores with actionable suggestions to boost maintainability</p>
+                <div class="mt-4 flex items-center text-sm text-[var(--color-chart-3)] font-medium">
+                  Learn more 
+                  <i data-lucide="arrow-right" class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"></i>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-chart-3)]/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+            </div>
+
+            <!-- Feature Card 5 -->
+            <div class="group relative overflow-hidden rounded-2xl border border-[var(--color-border)]/60 bg-[var(--color-card)]/80 backdrop-blur-sm p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[var(--color-primary)]/10">
+              <div class="relative z-10">
+                <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--color-chart-5)] to-[var(--color-chart-5)]/80 text-white">
+                  <i data-lucide="code-2" class="h-6 w-6"></i>
+                </div>
+                <h3 class="text-xl font-bold">Multi-Language Support</h3>
+                <p class="mt-2 text-[var(--color-muted-foreground)]">Works with JavaScript, Python, Java, Go, Rust, and 20+ programming languages</p>
+                <div class="mt-4 flex items-center text-sm text-[var(--color-chart-5)] font-medium">
+                  Learn more 
+                  <i data-lucide="arrow-right" class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"></i>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-br from-[var(--color-chart-5)]/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+            </div>
+
+            <!-- Feature Card 6 -->
+            <div class="group relative overflow-hidden rounded-2xl border border-[var(--color-border)]/60 bg-[var(--color-card)]/80 backdrop-blur-sm p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[var(--color-primary)]/10">
+              <div class="relative z-10">
+                <div class="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 text-white">
+                  <i data-lucide="rocket" class="h-6 w-6"></i>
+                </div>
+                <h3 class="text-xl font-bold">Instant Feedback</h3>
+                <p class="mt-2 text-[var(--color-muted-foreground)]">Get results in seconds, not hours. Perfect for CI/CD pipelines and rapid development</p>
+                <div class="mt-4 flex items-center text-sm text-purple-600 font-medium">
+                  Learn more 
+                  <i data-lucide="arrow-right" class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"></i>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" aria-labelledby="about-heading" class="border-b border-[var(--color-border)]">
+        <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+          <div>
+            <h2 id="about-heading" class="text-3xl font-semibold tracking-tight sm:text-4xl">Why CodeSensei?</h2>
+            <p class="mt-4 text-pretty text-[var(--color-muted-foreground)]">
+              CodeSensei automates the tedious parts of code review so your team can focus on architecture and product. It offers actionable insights, clear explanations, and pragmatic fixes you can trust, helping you reduce review cycles and ship faster.
+            </p>
+            <ul class="mt-6 grid list-disc gap-2 pl-5 text-[var(--color-foreground)]/90">
+              <li>Language-agnostic patterns with security-focused checks.</li>
+              <li>Integrates with your CI to block risky changes automatically.</li>
+              <li>Human-friendly suggestions with rationale and alternatives.</li>
+            </ul>
+            <div class="mt-8 rounded-lg border border-[var(--color-border)] bg-[var(--color-secondary)] p-4 text-sm text-[var(--color-muted-foreground)]">
+              Tip: Pair CodeSensei with your PR checks to catch regressions before they reach review.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" aria-labelledby="faq-heading" class="border-b border-[var(--color-border)] bg-[var(--color-secondary)]/40">
+        <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 id="faq-heading" class="text-3xl font-semibold tracking-tight sm:text-4xl">Frequently Asked Questions</h2>
+            <p class="mt-3 text-[var(--color-muted-foreground)]">Answers to common questions about CodeSensei.</p>
+          </div>
+
+          <div class="mt-8 space-y-2">
+            <details class="group rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4 open:pt-4">
+              <summary class="cursor-pointer list-none select-none text-left text-sm font-medium outline-none transition-colors hover:text-[var(--color-foreground)]">
+                <span class="inline-flex items-center gap-2">
+                  <span>What is CodeSensei?</span>
+                </span>
+              </summary>
+              <div class="mt-2 text-sm text-[var(--color-muted-foreground)]">
+                CodeSensei is an AI-powered code reviewer that analyzes your changes for bugs, security issues, performance pitfalls, and maintainability concerns, then offers clear, actionable suggestions.
+              </div>
+            </details>
+
+            <details class="group rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
+              <summary class="cursor-pointer list-none select-none text-left text-sm font-medium outline-none transition-colors hover:text-[var(--color-foreground)]">How does the GitHub PR integration work?</summary>
+              <div class="mt-2 text-sm text-[var(--color-muted-foreground)]">
+                Connect CodeSensei to your repository and it will review pull requests automatically. It leaves inline comments, summary notes, and a status check you can require before merge.
+              </div>
+            </details>
+
+            <details class="group rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
+              <summary class="cursor-pointer list-none select-none text-left text-sm font-medium outline-none transition-colors hover:text-[var(--color-foreground)]">What languages are supported?</summary>
+              <div class="mt-2 text-sm text-[var(--color-muted-foreground)]">
+                CodeSensei focuses on popular languages and frameworks. Support continues to expand, and you can configure rules to match your stack's standards.
+              </div>
+            </details>
+
+            <details class="group rounded-lg border border-[var(--color-border)] bg-[var(--color-card)] p-4">
+              <summary class="cursor-pointer list-none select-none text-left text-sm font-medium outline-none transition-colors hover:text-[var(--color-foreground)]">Is my code secure?</summary>
+              <div class="mt-2 text-sm text-[var(--color-muted-foreground)]">
+                Yes. Code is processed with strict security controls. You can self-host or use the hosted version with encryption in transit and at rest.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="border-t border-[var(--color-border)]">
+      <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">
+          <div class="text-center sm:text-left">
+            <p class="text-sm font-semibold">CodeSensei</p>
+            <p class="text-xs text-[var(--color-muted-foreground)]">AI-Powered Code Reviewer</p>
+          </div>
+          <nav class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm" aria-label="Footer">
+            <a href="#about" class="text-[var(--color-muted-foreground)] transition-colors hover:text-[var(--color-foreground)]">About</a>
+            <a href="#contact" class="text-[var(--color-muted-foreground)] transition-colors hover:text-[var(--color-foreground)]">Contact</a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-muted-foreground)] transition-colors hover:text-[var(--color-foreground)]">GitHub</a>
+            <a href="/privacy" class="text-[var(--color-muted-foreground)] transition-colors hover:text-[var(--color-foreground)]">Privacy Policy</a>
+          </nav>
+        </div>
+        <div class="mt-6 text-center text-xs text-[var(--color-muted-foreground)]">
+          © <span id="year"></span> CodeSensei. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      
+      if (menuBtn && mobileNav) {
+        menuBtn.addEventListener('click', () => { 
+          mobileNav.classList.toggle('hidden'); 
+        });
+        mobileNav.querySelectorAll('a').forEach(a => 
+          a.addEventListener('click', () => mobileNav.classList.add('hidden'))
+        );
+      }
+      
+      if (window.lucide && typeof window.lucide.createIcons === 'function') { 
+        window.lucide.createIcons(); 
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
