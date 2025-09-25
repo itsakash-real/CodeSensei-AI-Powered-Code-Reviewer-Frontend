@@ -1,14 +1,8 @@
-CodeSensei - AI-Powered Code Reviewer
-<div align="center"> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/> <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS"/> </div> <div align="center"> <p><strong>🚀 A modern, responsive landing page for an AI-powered code review platform built with cutting-edge web technologies.</strong></p>
-<a href="#demo">View Demo</a> -
-<a href="#features">Features</a> -
-<a href="#installation">Installation</a> -
-<a href="#usage">Usage</a> -
-<a href="#contact">Contact</a>
-
-</div>
+CodeSensei – AI-Powered Code Reviewer
+<div align="center"> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/> <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/> </div> <div align="center"> <p><strong>🚀 A modern, responsive landing page for an AI-powered code review platform.</strong></p> <a href="#demo">View Demo</a> • <a href="#features">Features</a> • <a href="#installation">Installation</a> • <a href="#usage">Usage</a> • <a href="#contact">Contact</a> </div>
 📋 Table of Contents
-About The Project
+
+About the Project
 
 Built With
 
@@ -32,123 +26,126 @@ License
 
 Contact
 
-🎯 About The Project
-CodeSensei is a professional landing page for an AI-powered code review platform that helps developers identify bugs, security vulnerabilities, and performance issues automatically. This project demonstrates modern web development practices with clean, maintainable code architecture.
+🎯 About the Project
+
+CodeSensei is a professional landing page for an AI-powered code review platform. It helps developers automatically detect bugs, performance issues, and security vulnerabilities, while showcasing modern web development practices with clean and maintainable code.
 
 Why CodeSensei?
-🔍 Problem Solving: Addresses the need for automated code quality assessment
 
-💡 Innovation: Combines AI technology with user-friendly interface design
+🔍 Problem Solving – tackles the need for automated code quality checks
 
-🎨 Modern Design: Implements contemporary UI/UX principles with smooth animations
+💡 Innovation – blends AI with an intuitive UI
 
-📱 Responsive: Fully optimized for all device sizes and screen resolutions
+🎨 Modern Design – smooth animations & contemporary UX principles
+
+📱 Responsive – fully optimized across all screen sizes
 
 🛠️ Built With
-This project leverages modern web technologies:
 
-HTML5 - Semantic markup with accessibility features
+HTML5 – semantic markup with accessibility features
 
-CSS3 - Advanced styling with CSS custom properties and animations
+CSS3 – advanced styling with custom properties & animations
 
-JavaScript (ES6+) - Modern JavaScript with modular architecture
+JavaScript (ES6+) – modular, modern functionality
 
-Tailwind CSS - Utility-first CSS framework for rapid development
+Tailwind CSS – utility-first framework for rapid UI development
 
-Lucide Icons - Beautiful, customizable SVG icon library
+Lucide Icons – customizable SVG icons
 
 ✨ Features
-🎨 Design & User Experience
-✅ Modern, professional landing page design
+🎨 Design & UX
 
-✅ Fully responsive layout (mobile-first approach)
+✅ Modern, professional landing page
 
-✅ Smooth scrolling navigation with active states
+✅ Fully responsive (mobile-first)
 
-✅ Interactive hover effects and micro-animations
+✅ Smooth scrolling & active nav states
 
-✅ Dark/Light theme support with CSS custom properties
+✅ Interactive hover effects & micro-animations
+
+✅ Dark/Light theme support
 
 🚀 Performance & Functionality
-✅ Optimized loading performance
+
+✅ Optimized loading speed
 
 ✅ Cross-browser compatibility
 
-✅ SEO-friendly semantic HTML structure
+✅ SEO-friendly HTML structure
 
-✅ Accessibility compliance (ARIA labels, keyboard navigation)
+✅ Accessibility compliance (ARIA, keyboard navigation)
 
 📱 Interactive Components
-✅ Animated statistics counters
 
-✅ Mobile-responsive hamburger navigation
+✅ Mobile hamburger navigation
+
+✅ Animated statistics counters
 
 ✅ Live code showcase with syntax highlighting
 
-✅ Collapsible FAQ accordion
+✅ FAQ accordion
 
-✅ Intersection Observer animations
+✅ Scroll-triggered animations
 
 🎯 Technical Excellence
-✅ Clean, maintainable code architecture
 
-✅ Separation of concerns (HTML/CSS/JS)
+✅ Clean, maintainable architecture
 
-✅ Error handling and performance monitoring
+✅ Separation of concerns (HTML, CSS, JS)
 
-✅ Modular JavaScript functions
+✅ Modular JS functions
 
 ✅ CSS custom properties for design system
 
 🎥 Demo
-🌐 Live Demo
+
+🌐 Live Demo – Coming Soon
 
 Screenshots
-<div align="center"> <img src="https://via.placeholder.com/800x400/1a1a1a/ffffff?text=CodeSensei+Hero+Section" alt="Hero Section" width="45%"/> <img src="https://via.placeholder.com/800x400/1a1a1a/ffffff?text=Features+Section" alt="Features Section" width="45%"/> </div>
+<div align="center"> <img src="https://via.placeholder.com/800x400/1a1a1a/ffffff?text=Hero+Section" alt="Hero Section" width="45%"/> <img src="https://via.placeholder.com/800x400/1a1a1a/ffffff?text=Features+Section" alt="Features Section" width="45%"/> </div>
 📦 Installation
 Prerequisites
-A modern web browser (Chrome, Firefox, Safari, Edge)
 
-Basic knowledge of HTML, CSS, and JavaScript
+Modern browser (Chrome, Firefox, Safari, Edge)
 
-Code editor (VS Code, Sublime Text, etc.)
+Basic knowledge of HTML, CSS, JavaScript
+
+Code editor (VS Code recommended)
 
 Quick Start
-Clone the repository
+# Clone repository
+git clone https://github.com/yourusername/codesensei-landing.git  
 
-bash
-git clone https://github.com/yourusername/codesensei-landing.git
-Navigate to project directory
+# Move into project
+cd codesensei-landing  
 
-bash
-cd codesensei-landing
-Open in your browser
+# Open in browser
+open index.html
 
-bash
-# Simply open index.html in your preferred browser
-# Or use a local server for best experience
 
-# Using Python 3
-python -m http.server 3000
+Or serve locally for the best experience:
 
-# Using Node.js (if you have live-server installed)
+# Python 3
+python -m http.server 3000  
+
+# Node.js (with live-server installed)
 npx live-server
-Access the website
 
-text
-Local: http://localhost:3000
+
+Access at: http://localhost:3000
+
 🎮 Usage
+
 Development
-File Structure: The project follows a clean separation of concerns
 
-Customization: Modify CSS custom properties in styles.css for theme changes
+Edit content in index.html
 
-Content Updates: Edit HTML content in index.html
+Modify theme via CSS custom properties in style.css
 
-Functionality: Extend JavaScript features in script.js
+Extend interactivity via script.js
 
 Deployment
-This project can be deployed on any static hosting service:
+Works on any static hosting service:
 
 GitHub Pages
 
@@ -159,91 +156,38 @@ Vercel
 Firebase Hosting
 
 📁 Project Structure
-text
 codesensei-landing/
-│
-├── index.html          # Main HTML file with semantic structure
-├── styles.css          # Complete CSS with design system
-├── script.js          # Interactive JavaScript functionality
-└── README.md          # Project documentation
-File Descriptions
-index.html: Clean HTML5 structure with semantic elements and accessibility features
-
-styles.css: Comprehensive CSS including design system, animations, and responsive design
-
-script.js: Modern JavaScript with event handling, animations, and interactive features
+├── index.html    # Semantic HTML structure
+├── style.css     # Design system & responsive styles
+├── script.js     # Interactive JS
+└── README.md     # Documentation
 
 🔧 Technical Highlights
-Code Quality Features
-Semantic HTML5: Proper use of header, main, section, and footer elements
+Code Quality
 
-CSS Custom Properties: Maintainable design system with CSS variables
+Semantic HTML5 structure
 
-Modern JavaScript: ES6+ features with modular, reusable functions
+CSS custom properties (design tokens)
 
-Performance Optimization: Efficient animations and lazy loading techniques
+ES6+ modular JavaScript
 
-Accessibility: ARIA labels, keyboard navigation, and screen reader support
+Performance optimization (animations, lazy loading)
 
-Development Best Practices
-Separation of Concerns: Clear distinction between structure, styling, and behavior
+Accessibility (ARIA, keyboard nav)
 
-Error Handling: Comprehensive error handling and logging
+Best Practices
 
-Performance Monitoring: Built-in performance measurement and tracking
+Separation of concerns (HTML/CSS/JS)
 
-Cross-Browser Testing: Ensures compatibility across major browsers
+Error handling in JS
 
-Mobile-First Design: Responsive design optimized for all devices
+Mobile-first design
+
+Cross-browser testing
 
 🌐 Browser Compatibility
 Browser	Version	Status
-Chrome	90+	✅ Fully Supported
-Firefox	88+	✅ Fully Supported
-Safari	14+	✅ Fully Supported
-Edge	90+	✅ Fully Supported
-🤝 Contributing
-Contributions are welcome! Here's how you can help:
-
-Fork the Project
-
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-
-Push to the Branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-Development Guidelines
-Follow existing code style and formatting
-
-Add comments for complex functionality
-
-Test across multiple browsers and devices
-
-Update documentation for new features
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-📞 Contact
-Your Name - your.email@example.com
-
-Project Link: https://github.com/yourusername/codesensei-landing
-
-LinkedIn: Your LinkedIn Profile
-
-Portfolio: Your Portfolio Website
-
-<div align="center"> <p>Made with ❤️ by [Your Name]</p> <p>⭐ Star this repository if it helped you!</p> </div>
-🙏 Acknowledgments
-Tailwind CSS for the utility-first CSS framework
-
-Lucide Icons for beautiful, customizable icons
-
-MDN Web Docs for comprehensive web development resources
-
-Inspiration from modern SaaS landing page designs
-
-Keywords: HTML, CSS, JavaScript, TailwindCSS, Responsive Design, Landing Page, Web Development, Frontend, UI/UX, Modern Web Design
+Chrome	90+	✅ Supported
+Firefox	88+	✅ Supported
+Safari	14+	✅ Supported
+Edge	90+	✅ Supported
